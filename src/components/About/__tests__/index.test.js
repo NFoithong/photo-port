@@ -10,7 +10,7 @@ afterEach(cleanup);
 describe('About component', () => {
     // renders About test
     // First test - test file About directory using it() function
-
+    // baseline - verify that the component is rendering.
     it('renders', () => {
         render( < About /> );
     });
