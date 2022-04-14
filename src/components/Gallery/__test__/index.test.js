@@ -20,6 +20,6 @@ describe('Gallery component', () => {
 });
 
 it('renders', () => {
-  const { getByTestId } = render(<Gallery currentCategory={portrait} />)
-  expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
+  const { getById } = render(<Gallery currentCategory={portrait} />)
+  expect(getById('h1tag')).toHaveTextContent('Portraits')
 })

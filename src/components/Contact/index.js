@@ -18,30 +18,32 @@ function ContactForm() {
         if (e.target.name === 'email') {
             const isValid = validateEmail(e.target.value);
             console.log(isValid);
-
-        // isValid conditional statement
-        if (!isValid) {
-            setErrorMessage('Your email is invalid!');
-        } else {
+            // isValid conditional statement
+            if (!isValid) {
+              setErrorMessage('Your email is invalid!');
+            } else {
+                setErrorMessage('');
+            }
+        }   else {
             if (!e.target.value.length) {
                 setErrorMessage(`${e.target.name} is required.`);
             } else {
                 setErrorMessage('');
             }
         }
-        }
+    };
+
+    function handleSubmit(e) {
+        e.preventDefault();
+          
         if (!errorMessage) {
             setFormState({...formState, [e.target.name]: e.target.value});
         }
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-    }
-
     return (
         <section>
-        <h1>Contact me</h1>
+        <h1 data-testid='h1tag'>Contact me</h1>
             <form onSubmit={handleSubmit} id="Contact-form">
             {/* name */}
                 <div>
@@ -63,7 +65,7 @@ function ContactForm() {
                         <p className="error-text">{errorMessage}</p>
                     </div>
                 )}
-                <button type="submit">Submit</button>
+                <button data-testid='button' type="submit">Submit</button>
             </form>
         </section>
     )

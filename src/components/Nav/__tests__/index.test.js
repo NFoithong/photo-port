@@ -22,9 +22,9 @@ describe('Nav component', ()=>{
 describe('emoji is visible', ()=>{
     it('inserts emoji into the h2', ()=>{
         // Arrange
-        const { getByLabelText } = render(<Nav />);
+        const { getText } = render(<Nav />);
         // Assert
-        expect(getByLabelText('camera')).toHaveTextContent('📸');
+        expect(getText('camera')).toHaveTextContent('📸');
     });
 })
 
@@ -32,9 +32,9 @@ describe('emoji is visible', ()=>{
 describe('links are visible', ()=>{
     it('inserts text into the links', ()=>{
         // Arrange
-        const { getByTestId } = render(<Nav />);
+        const { getById } = render(<Nav />);
         //Assert
-        expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
-        expect(getByTestId('about')).toHaveTextContent('About me');
+        expect(getById('link')).toHaveTextContent('Oh Snap!');
+        expect(getById('about')).toHaveTextContent('About me');
     });
 })
