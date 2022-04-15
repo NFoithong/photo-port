@@ -1,10 +1,10 @@
 import React from "react";
 // import capitalizeFirstLetter from utils folder
+import PhotoList from "../PhotoList";
 import { capitalizeFirstLetter } from '../../utils/helpers';
 // import photo from '../../assets/small/commercial/0.jpg';
-import PhotoList from "../PhotoList";
 
-function Gallery({props}) {
+function Gallery(props) {
 
     const { currentCategory } = props;
 
